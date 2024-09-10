@@ -10,3 +10,5 @@ tblastn -query "$query" -subject "$subject" -task blastn-short -outfmt "6 sseq s
 awk -v OFS="\t" '$3 > 30 && $4 / $5 > 0.9 { print $0 }' blast_output.txt > "%$outputfile"
 
 cat "$outputfile" | wc -l
+
+rm blast_output.txt
